@@ -12,31 +12,39 @@ The project consists of two main modules:
 
 Before you begin, ensure you have the following installed: - Apache Kafka - Zookeeper (included with Kafka) - MySQL Database - Java 8 or above - Maven
 
-## Steps to Start Zookeeper, Broker, and Kafka Topic
+## Getting Started
 
-### 1. Start Zookeeper
+These instructions will help you get a copy of the project running on your local machine.
 
-Kafka relies on Zookeeper, so you must start it first.
+### Prerequisites
 
-```bash # Go to your Kafka directory cd kafka_2.13-2.7.0 # Start Zookeeper on the default port 2181 bin/zookeeper-server-start.sh config/zookeeper.properties ```
+- **Java 8+**: Ensure you have the latest version of Java installed.
+- **Apache Kafka**: Download and install [Apache Kafka](https://kafka.apache.org/downloads).
+- **Spring Boot**: The project uses Spring Boot to implement Kafka producers and consumers.
 
-### 2. Start Kafka Broker
+### Starting Zookeeper and Kafka Broker
 
-Next, start the Kafka broker that listens for connections on port 9092.
+1. **Start Zookeeper**: Navigate to your Kafka installation directory and start Zookeeper with the following command:
 
-```bash # In a new terminal, go to the Kafka directory cd kafka_2.13-2.7.0 # Start the Kafka broker bin/kafka-server-start.sh config/server.properties ```
+   ```bash
+   bin/zookeeper-server-start.sh config/zookeeper.properties
+   ```
 
-### 3. Create Kafka Topic
+2. **Start Kafka Broker**: After Zookeeper starts, launch Kafka Broker:
 
-Create a Kafka topic named `wikimedia` where your producer will send data.
+   ```bash
+   bin/kafka-server-start.sh config/server.properties
+   ```
 
-```bash # In the Kafka directory, create the topic bin/kafka-topics.sh --create --topic wikimedia --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1 ```
+### Creating Kafka Topics
 
-### 4. Check the Created Topic
+To create Kafka topics for string and JSON data, use the following commands.
 
-To verify that the `wikimedia` topic has been created:
+1. **Create a topic**:
 
-```bash bin/kafka-topics.sh --list --bootstrap-server localhost:9092 ```
+   ```bash
+   bin/kafka-topics.sh --create --topic wikimedia --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+   ```
 
 ## Storing Data in MySQL
 
