@@ -38,9 +38,7 @@ These instructions will help you get a copy of the project running on your local
 
 ### Creating Kafka Topics
 
-To create Kafka topics for string and JSON data, use the following commands.
-
-1. **Create a topic**:
+ **Create a topic**:
 
    ```bash
    bin/kafka-topics.sh --create --topic wikimedia --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
