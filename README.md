@@ -42,9 +42,14 @@ To verify that the `wikimedia` topic has been created:
 
 The consumer module is responsible for saving the event data into a MySQL database. To ensure correct storage:
 
-1. Ensure MySQL is running. 2. Update the MySQL database connection details in the `application.properties` file in the `consumer` module.
+1. Ensure MySQL is running.
+2. Update the MySQL database connection details in the `application.properties` file in the `consumer` module.
 
-```properties spring.datasource.url=jdbc:mysql://localhost:3306/wikimedia spring.datasource.username=root spring.datasource.password=yourpassword spring.jpa.hibernate.ddl-auto=update ```
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/wikimedia_db
+spring.datasource.username=root
+spring.datasource.password=yourpassword
+spring.jpa.hibernate.ddl-auto=update
 
 ### MySQL Schema Example
 
