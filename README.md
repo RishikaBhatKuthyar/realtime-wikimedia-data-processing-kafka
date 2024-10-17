@@ -46,13 +46,8 @@ The consumer module is responsible for saving the event data into a MySQL databa
 2. Update the MySQL database connection details in the `application.properties` file in the `consumer` module.
 
 ```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/wikimedia_db
+spring.datasource.url=jdbc:mysql://localhost:3306/wikimedia
 spring.datasource.username=root
 spring.datasource.password=yourpassword
 spring.jpa.hibernate.ddl-auto=update
 
-### MySQL Schema Example
-
-Create a table in MySQL to store the Wikimedia changes:
-
-```sql CREATE DATABASE wikimedia;
